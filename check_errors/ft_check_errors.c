@@ -1,38 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_check_errors.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/05 12:39:08 by makacem           #+#    #+#             */
-/*   Updated: 2022/09/27 19:51:38 by makacem          ###   ########.fr       */
+/*   Created: 2022/09/27 12:35:10 by makacem           #+#    #+#             */
+/*   Updated: 2022/09/27 19:55:01 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-long int	ft_atoi(const char *str)
+void	ft_check_errors(int argc, char **argv)
 {
-	long int	n;
-	int			a;
-
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
-	{
-		str++;
-	}
-	a = 1;
-	while (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			a = a * -1;
-		str++;
-	}
-	n = 0;
-	while (*str >= 48 && *str <= 57)
-	{
-		n = n * 10 + (*str - 48);
-		str++;
-	}
-	return (n * a);
+	ft_argv_not_int(argc, argv);
+	ft_big_int(argc, argv);
 }

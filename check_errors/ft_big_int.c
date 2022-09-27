@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_big_int.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/05 12:39:08 by makacem           #+#    #+#             */
-/*   Updated: 2022/09/27 19:51:38 by makacem          ###   ########.fr       */
+/*   Created: 2022/09/27 15:23:24 by makacem           #+#    #+#             */
+/*   Updated: 2022/09/27 19:41:09 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-long int	ft_atoi(const char *str)
+void	ft_big_int(int argc, char **argv)
 {
-	long int	n;
-	int			a;
+	int			nbr_of_args;
+	int			i;
+	long int	nbr;
 
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
+	nbr_of_args = argc - 1;
+	i = 1;
+	while (i <= nbr_of_args)
 	{
-		str++;
+		nbr = ft_atoi(argv[i]);
+		if (nbr > 2147483647 || nbr < -2147483647 - 1)
+			ft_display_error();
+		printf("%ld ", nbr);
+		i++;
 	}
-	a = 1;
-	while (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			a = a * -1;
-		str++;
-	}
-	n = 0;
-	while (*str >= 48 && *str <= 57)
-	{
-		n = n * 10 + (*str - 48);
-		str++;
-	}
-	return (n * a);
 }
