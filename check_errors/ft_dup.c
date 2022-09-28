@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_dup.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 13:02:46 by makacem           #+#    #+#             */
-/*   Updated: 2022/09/28 19:02:35 by makacem          ###   ########.fr       */
+/*   Created: 2022/09/28 17:35:45 by makacem           #+#    #+#             */
+/*   Updated: 2022/09/28 18:02:23 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
+#include "../push_swap.h"
 
-# define PUSH_SWAP_H
+void	ft_dup(int argc, char **argv)
+{
+	int	nbr_of_args;
+	int	nbr;
+	int	i;
+	int	j;
 
-# include <stdio.h>
-# include <stdlib.h>
-# include "libft/libft.h"
-
-void	ft_check_errors(int argc, char **argv);
-void	ft_argv_not_int(int argc, char **argv);
-void	ft_display_error(void);
-void	ft_big_int(int argc, char **argv);
-void	ft_dup(int argc, char **argv);
-
-#endif
+	nbr_of_args = argc - 1;
+	i = 1;
+	while (i <= nbr_of_args)
+	{
+		nbr = ft_atoi(argv[i]);
+		j = i + 1;
+		while (j <= nbr_of_args)
+		{
+			if (nbr == ft_atoi(argv[j]))
+				ft_display_error();
+			j++;
+		}
+		i++;
+	}
+}

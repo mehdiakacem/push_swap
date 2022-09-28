@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:35:10 by makacem           #+#    #+#             */
-/*   Updated: 2022/09/27 19:55:01 by makacem          ###   ########.fr       */
+/*   Updated: 2022/09/28 17:35:34 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,5 @@ void	ft_check_errors(int argc, char **argv)
 {
 	ft_argv_not_int(argc, argv);
 	ft_big_int(argc, argv);
+	ft_dup(argc, argv);
 }
