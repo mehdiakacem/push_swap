@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 13:02:49 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/09 15:19:11 by makacem          ###   ########.fr       */
+/*   Updated: 2022/10/09 16:52:01 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@ int	main(int argc, char **argv)
 		exit(0);
 	ft_check_errors(argc, argv);
 	ft_build_stacks(argc, argv, &stack_a, &stack_b);
+	ft_print_stacks(&stack_a, &stack_b);
+	if (argc <= 4)
+		ft_solve(&stack_a);
+	else if (argc >= 5)
+	{
+		ft_push(&stack_a, &stack_b);
+	}
 	ft_print_stacks(&stack_a, &stack_b);
 	ft_free_stacks(&stack_a);
 	return (0);

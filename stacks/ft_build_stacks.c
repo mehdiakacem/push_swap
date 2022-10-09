@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 11:55:30 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/09 15:18:09 by makacem          ###   ########.fr       */
+/*   Updated: 2022/10/09 15:40:00 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ void	ft_build_stacks(int argc, char **argv, t_stack *a, t_stack *b)
 	i = 1;
 	a->top = NULL;
 	nbr = ft_atoi(argv[i]);
-	ft_push(&(a->top), nbr);
+	ft_push_stacks(&(a->top), nbr);
 	i++;
 	a->bot = a->top;
 	while (i <= nbr_of_args)
 	{
 		nbr = ft_atoi(argv[i]);
-		ft_push(&(a->bot->next), nbr);
+		ft_push_stacks(&(a->bot->next), nbr);
 		a->bot = a->bot->next;
 		i++;
 	}

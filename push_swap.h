@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 13:02:46 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/09 15:17:25 by makacem          ###   ########.fr       */
+/*   Updated: 2022/10/09 16:53:23 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_argv_not_int(int argc, char **argv);
 void	ft_display_error(void);
 void	ft_big_int(int argc, char **argv);
 void	ft_dup(int argc, char **argv);
-void	ft_push(t_node **top, int nbr);
+void	ft_push_stacks(t_node **top, int nbr);
 void	ft_build_stacks(int argc, char **argv, t_stack *a, t_stack *b);
 void	ft_free_stacks(t_stack *stack_a);
 void	ft_print_stacks(t_stack *stack_a, t_stack *stack_b);
@@ -50,5 +50,7 @@ void	ft_rrr(t_stack *stack_a, t_stack *stack_b);
 void	ft_sa(t_stack *stack_a);
 void	ft_sb(t_stack *stack_b);
 void	ft_ss(t_stack *stack_a, t_stack *stack_b);
+void	ft_solve(t_stack *stack_a);
+void	ft_push(t_stack *stack_a, t_stack *stack_b);
 
 #endif
