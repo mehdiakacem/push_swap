@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_stacks.c                                  :+:      :+:    :+:   */
+/*   ft_pb.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 14:18:44 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/05 15:10:45 by makacem          ###   ########.fr       */
+/*   Created: 2022/10/06 12:34:55 by makacem           #+#    #+#             */
+/*   Updated: 2022/10/08 21:38:33 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_print_stacks(t_stack *stack_a, t_stack *stack_b)
+void	ft_pb(t_stack *stack_a, t_stack *stack_b)
 {
-	t_node	*temp_a;
-	t_node	*temp_b;
-	temp_a = stack_a->top;
-	temp_b = stack_b->top;
-	printf("a -> ");
-	while (temp_a != NULL )
+	t_node	*temp;
+
+	if (stack_a->top != NULL)
 	{
-		printf("%d -> ", temp_a->data);
-		temp_a = temp_a->next;
+		if (stack_b->top == NULL)
+		{
+			stack_b->top = stack_a->top;
+			stack_a->top = stack_a->top->next;
+			stack_b->bot = stack_b->top;
+			stack_b->bot->next = NULL;
+		}
+		else
+		{
+			temp = stack_b->top;
+			stack_b->top = stack_a->top;
+			stack_a->top = stack_a->top->next;
+			stack_b->top->next = temp;
+		}
+		ft_printf("pb\n");
 	}
-	printf("NULL\n");
-	printf("b -> ");
-	while (temp_b != NULL )
-	{
-		printf("%d ", temp_b->data);
-		temp_b = temp_b->next;
-	}
-	printf("NULL\n");
 }

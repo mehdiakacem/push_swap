@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_build_stack_b.c                                 :+:      :+:    :+:   */
+/*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 14:46:15 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/05 14:49:34 by makacem          ###   ########.fr       */
+/*   Created: 2022/10/05 12:58:45 by makacem           #+#    #+#             */
+/*   Updated: 2022/10/07 12:46:22 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_build_stack_b(t_stack *stack_b)
+void	ft_push(t_node **top, int nbr)
 {
-	stack_b->top = NULL;
-	stack_b->bot = stack_b->top;
+	t_node	*new_node;
+
+	new_node = (t_node *)malloc(sizeof(void *));
+	if (new_node == NULL)
+		ft_display_error();
+	new_node->data = nbr;
+	new_node->next = *top;
+	*top = new_node;
 }

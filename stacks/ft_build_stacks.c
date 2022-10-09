@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_build_stacks.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 13:02:49 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/09 15:19:11 by makacem          ###   ########.fr       */
+/*   Created: 2022/10/05 11:55:30 by makacem           #+#    #+#             */
+/*   Updated: 2022/10/09 15:18:09 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_build_stacks(int argc, char **argv, t_stack *a, t_stack *b)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	int	nbr_of_args;
+	int	i;
+	int	nbr;
 
-	if (argc <= 2)
-		exit(0);
-	ft_check_errors(argc, argv);
-	ft_build_stacks(argc, argv, &stack_a, &stack_b);
-	ft_print_stacks(&stack_a, &stack_b);
-	ft_free_stacks(&stack_a);
-	return (0);
+	nbr_of_args = argc - 1;
+	i = 1;
+	a->top = NULL;
+	nbr = ft_atoi(argv[i]);
+	ft_push(&(a->top), nbr);
+	i++;
+	a->bot = a->top;
+	while (i <= nbr_of_args)
+	{
+		nbr = ft_atoi(argv[i]);
+		ft_push(&(a->bot->next), nbr);
+		a->bot = a->bot->next;
+		i++;
+	}
+	b->top = NULL;
+	b->bot = b->top;
 }

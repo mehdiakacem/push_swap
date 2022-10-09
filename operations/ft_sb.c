@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_sb.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 13:02:49 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/09 15:19:11 by makacem          ###   ########.fr       */
+/*   Created: 2022/10/06 12:35:17 by makacem           #+#    #+#             */
+/*   Updated: 2022/10/09 14:44:12 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_sb(t_stack *stack_b)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	t_node	*temp;
 
-	if (argc <= 2)
-		exit(0);
-	ft_check_errors(argc, argv);
-	ft_build_stacks(argc, argv, &stack_a, &stack_b);
-	ft_print_stacks(&stack_a, &stack_b);
-	ft_free_stacks(&stack_a);
-	return (0);
+	if (stack_b->top != NULL && stack_b->top->next != NULL)
+	{	
+		temp = stack_b->top;
+		stack_b->top = stack_b->top->next;
+		temp->next = stack_b->top->next;
+		stack_b->top->next = temp;
+		ft_printf("sb\n");
+	}
 }
