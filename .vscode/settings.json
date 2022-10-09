@@ -1,6 +1,6 @@
 {
 	"files.associations": {
-		"ft_push.C": "cpp",
+		"ft_push.c": "c",
 		"push_swap.h": "c"
 	}
 }
