@@ -5,21 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 12:58:45 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/07 12:46:22 by makacem          ###   ########.fr       */
+/*   Created: 2022/10/09 16:52:21 by makacem           #+#    #+#             */
+/*   Updated: 2022/10/13 19:27:57 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_push(t_node **top, int nbr)
-{
-	t_node	*new_node;
+void ft_l(t_stack *stack_a);
 
-	new_node = (t_node *)malloc(sizeof(void *));
-	if (new_node == NULL)
-		ft_display_error();
-	new_node->data = nbr;
-	new_node->next = *top;
-	*top = new_node;
+void	ft_push(t_stack *stack_a)
+{
+	ft_l(stack_a);
+	ft_lis(stack_a);
+}
+
+void ft_l(t_stack *stack_a)
+{
+	t_node *temp;
+
+	temp = stack_a->top;
+	while (temp != NULL)
+	{
+		temp->l = 1;
+		temp->is_lis = 0;
+		temp = temp->next;
+	}
 }

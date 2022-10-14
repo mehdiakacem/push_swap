@@ -2,5 +2,6 @@
 	"files.associations": {
 		"ft_push.c": "c",
 		"push_swap.h": "c"
-	}
+	},
+	"C_Cpp.errorSquiggles": "Disabled"
 }

@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 13:02:46 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/09 16:53:23 by makacem          ###   ########.fr       */
+/*   Updated: 2022/10/13 19:24:55 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 typedef struct node
 {
 	int			data;
+	int			l;
+	int			is_lis;
 	struct node	*next;
 }	t_node;
 
@@ -51,6 +53,8 @@ void	ft_sa(t_stack *stack_a);
 void	ft_sb(t_stack *stack_b);
 void	ft_ss(t_stack *stack_a, t_stack *stack_b);
 void	ft_solve(t_stack *stack_a);
-void	ft_push(t_stack *stack_a, t_stack *stack_b);
+void	ft_push(t_stack *stack_a);
+void	ft_lis(t_stack *stack_a);
+void	ft_islis(t_stack *stack_a, t_node *start, t_node *finish);
 
 #endif
