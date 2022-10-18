@@ -6,7 +6,7 @@
 #    By: makacem <makacem@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 13:01:53 by makacem           #+#    #+#              #
-#    Updated: 2022/10/13 19:32:10 by makacem          ###   ########.fr        #
+#    Updated: 2022/10/19 00:47:05 by makacem          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRC = push_swap.c \
 	push/ft_push.c \
 	push/ft_lis.c \
 	push/ft_islis.c \
+	push/utils.c \
 
 OBJ = $(SRC:.c=.o)
 

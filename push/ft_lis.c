@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 13:21:31 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/13 19:32:05 by makacem          ###   ########.fr       */
+/*   Updated: 2022/10/19 00:48:24 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 t_node	*ft_start_lis(t_stack *stack_a);
 t_node	*ft_finish_lis(t_stack *stack_a, int start);
-void	ft_find_lis(t_stack *stack_a, t_node *start, t_node *finish);
-void	ft_index_lis(t_stack *stack_a, t_node *lis, t_node *finish);
 
 void	ft_lis(t_stack *stack_a)
 {
@@ -24,22 +22,37 @@ void	ft_lis(t_stack *stack_a)
 
 	start = ft_start_lis(stack_a);
 	finish = ft_finish_lis(stack_a, start->data);
-
 	ft_find_lis(stack_a, start, finish);
 	ft_islis(stack_a, start, finish);
-	
+	ft_print_lis(stack_a, start, finish);
+	printf("\n");
+}
+
+int	ft_stack_len(t_stack *stack_a)
+{
+	int		count;
+	t_node	*node;
+
+	count = 0;
+	node = stack_a->top;
+	while (node != NULL)
+	{
+		node = node->next;
+		count++;
+	}
+	return (count);
 }
 
 void	ft_index_lis(t_stack *stack_a, t_node *lis, t_node *finish)
 {
-	t_node *sub;
+	t_node	*sub;
 
 	sub = lis->next;
 	if (sub == NULL)
 		sub = stack_a->top;
 	if (finish != NULL)
 	{
-		while (sub->data != finish->data)
+		while (sub->data != finish->next->data)
 		{
 			if (lis->data < sub->data)
 				sub->l = sub->l + 1;
@@ -55,31 +68,6 @@ void	ft_index_lis(t_stack *stack_a, t_node *lis, t_node *finish)
 			if (lis->data < sub->data)
 				sub->l = sub->l + 1;
 			sub = sub->next;
-		}
-	}
-}
-
-void	ft_find_lis(t_stack *stack_a, t_node *start, t_node *finish)
-{
-	t_node *lis;
-
-	lis = start;
-	if (finish != NULL)
-	{
-		while (lis->data != finish->data)
-		{
-			ft_index_lis(stack_a, lis, finish);
-			lis = lis->next;
-			if (lis == NULL)
-				lis = stack_a->top;
-		}
-	}
-	else if (finish == NULL)
-	{
-		while (lis != NULL)
-		{
-			ft_index_lis(stack_a, lis, finish);
-			lis = lis->next;
 		}
 	}
 }
