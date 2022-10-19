@@ -6,11 +6,14 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 00:43:09 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/19 00:44:46 by makacem          ###   ########.fr       */
+/*   Updated: 2022/10/19 12:32:29 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+t_node	*ft_null(t_node *start);
+t_node	*ft_not_null(t_stack *stack_a, t_node *start);
 
 void	ft_print_lis(t_stack *stack_a, t_node *start, t_node *finish)
 {
@@ -40,30 +43,47 @@ void	ft_print_lis(t_stack *stack_a, t_node *start, t_node *finish)
 	}
 }
 
-void	ft_find_lis(t_stack *stack_a, t_node *start, t_node *finish)
+t_node	*ft_high_index(t_stack *stack_a, t_node *start, t_node *finish)
 {
-	t_node	*lis;
+	t_node	*high_index;
+
+	high_index = start;
+	if (finish != NULL)
+		high_index = ft_not_null(stack_a, start);
+	else if (finish == NULL)
+		high_index = ft_null(start);
+	return (high_index);
+}
+
+t_node	*ft_null(t_node *start)
+{
+	t_node	*high_index;
+
+	high_index = start;
+	while (start != NULL)
+	{
+		if (start->l >= high_index->l)
+			high_index = start;
+		start = start->next;
+	}
+	return (high_index);
+}
+
+t_node	*ft_not_null(t_stack *stack_a, t_node *start)
+{
+	t_node	*high_index;
 	int		len;
 
-	lis = start;
+	high_index = start;
 	len = ft_stack_len(stack_a);
-	if (finish != NULL)
+	while (len > 0)
 	{
-		while (len > 0)
-		{
-			ft_index_lis(stack_a, lis, finish);
-			lis = lis->next;
-			len--;
-			if (lis == NULL)
-				lis = stack_a->top;
-		}
+		if (start->l >= high_index->l)
+			high_index = start;
+		start = start->next;
+		len--;
+		if (start == NULL)
+			start = stack_a->top;
 	}
-	else if (finish == NULL)
-	{
-		while (lis != NULL)
-		{
-			ft_index_lis(stack_a, lis, finish);
-			lis = lis->next;
-		}
-	}
+	return (high_index);
 }

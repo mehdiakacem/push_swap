@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 13:21:31 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/19 00:48:24 by makacem          ###   ########.fr       */
+/*   Updated: 2022/10/19 12:55:19 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void	ft_lis(t_stack *stack_a)
 	finish = ft_finish_lis(stack_a, start->data);
 	ft_find_lis(stack_a, start, finish);
 	ft_islis(stack_a, start, finish);
-	ft_print_lis(stack_a, start, finish);
-	printf("\n");
 }
 
 int	ft_stack_len(t_stack *stack_a)

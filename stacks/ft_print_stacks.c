@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:18:44 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/19 00:50:10 by makacem          ###   ########.fr       */
+/*   Updated: 2022/10/19 12:57:06 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_print_stacks(t_stack *stack_a, t_stack *stack_b)
 		temp_a = temp_a->next;
 	}
 	printf("NULL\n");
+	printf("\n");
 	printf("b -> ");
 	while (temp_b != NULL )
 	{

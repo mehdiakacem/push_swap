@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 13:02:46 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/19 00:48:30 by makacem          ###   ########.fr       */
+/*   Updated: 2022/10/19 12:49:54 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,13 @@ void	ft_sa(t_stack *stack_a);
 void	ft_sb(t_stack *stack_b);
 void	ft_ss(t_stack *stack_a, t_stack *stack_b);
 void	ft_solve(t_stack *stack_a);
-void	ft_push(t_stack *stack_a);
+void	ft_push(t_stack *stack_a, t_stack *stack_b);
 void	ft_lis(t_stack *stack_a);
 void	ft_islis(t_stack *stack_a, t_node *start, t_node *finish);
 int		ft_stack_len(t_stack *stack_a);
 void	ft_print_lis(t_stack *stack_a, t_node *start, t_node *finish);
 void	ft_find_lis(t_stack *stack_a, t_node *start, t_node *finish);
 void	ft_index_lis(t_stack *stack_a, t_node *lis, t_node *finish);
+t_node	*ft_high_index(t_stack *stack_a, t_node *start, t_node *finish);
 
 #endif
