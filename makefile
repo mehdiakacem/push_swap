@@ -6,7 +6,7 @@
 #    By: makacem <makacem@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 13:01:53 by makacem           #+#    #+#              #
-#    Updated: 2022/10/19 00:47:05 by makacem          ###   ########.fr        #
+#    Updated: 2022/10/21 18:41:32 by makacem          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,12 @@ SRC = push_swap.c \
 	push/ft_lis.c \
 	push/ft_islis.c \
 	push/utils.c \
+	swap/ft_swap.c \
+	swap/ft_index.c \
+	swap/ft_pair.c \
+	swap/ft_moves.c \
+	swap/utils.c \
+	ft_sort.c \
 
 OBJ = $(SRC:.c=.o)
 

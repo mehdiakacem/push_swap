@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 13:02:46 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/19 12:49:54 by makacem          ###   ########.fr       */
+/*   Updated: 2022/10/21 18:41:14 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ typedef struct node
 	int			data;
 	int			l;
 	int			is_lis;
+	int			index;
+	int			moves;
 	struct node	*next;
+	struct node	*pair;
 }	t_node;
 
 typedef struct stack
@@ -61,5 +64,12 @@ void	ft_print_lis(t_stack *stack_a, t_node *start, t_node *finish);
 void	ft_find_lis(t_stack *stack_a, t_node *start, t_node *finish);
 void	ft_index_lis(t_stack *stack_a, t_node *lis, t_node *finish);
 t_node	*ft_high_index(t_stack *stack_a, t_node *start, t_node *finish);
+void	ft_swap(t_stack *stack_a, t_stack *stack_b);
+void	ft_index(t_stack *stack);
+void	ft_pair(t_stack *stack_a, t_stack *stack_b);
+void	ft_moves(t_stack *stack_b);
+t_node	*ft_smallest_nbr(t_stack *stack_a);
+t_node	*ft_least_moves_node(t_stack *stack_b);
+void	ft_sort(t_stack *stack_a);
 
 #endif

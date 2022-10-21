@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_stacks.c                                  :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 14:18:44 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/21 15:21:32 by makacem          ###   ########.fr       */
+/*   Created: 2022/10/21 15:37:32 by makacem           #+#    #+#             */
+/*   Updated: 2022/10/21 15:40:50 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_print_stacks(t_stack *stack_a, t_stack *stack_b)
-{
-	t_node	*temp_a;
-	t_node	*temp_b;
 
-	temp_a = stack_a->top;
-	temp_b = stack_b->top;
-	printf("a -> ");
-	while (temp_a != NULL )
+
+t_node	*ft_smallest_nbr(t_stack *stack_a)
+{
+	t_node	*smallest_node;
+	t_node	*temp;
+
+	temp = stack_a->top;
+	smallest_node = temp;
+	while (temp != NULL)
 	{
-		printf("%d -> ", temp_a->data);
-		temp_a = temp_a->next;
+		if (temp->data < smallest_node->data)
+			smallest_node = temp;
+		temp = temp->next;
 	}
-	printf("NULL\n");
-	printf("\n");
-	printf("b -> ");
-	while (temp_b != NULL )
-	{
-		printf("%d -> ", temp_b->data);
-		temp_b = temp_b->next;
-	}
-	printf("NULL\n");
+	return (smallest_node);
 }

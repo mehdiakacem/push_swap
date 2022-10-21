@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_stacks.c                                  :+:      :+:    :+:   */
+/*   ft_index.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 14:18:44 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/21 15:21:32 by makacem          ###   ########.fr       */
+/*   Created: 2022/10/20 16:55:05 by makacem           #+#    #+#             */
+/*   Updated: 2022/10/20 16:55:33 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_print_stacks(t_stack *stack_a, t_stack *stack_b)
+void	ft_index(t_stack *stack)
 {
-	t_node	*temp_a;
-	t_node	*temp_b;
+	t_node	*node;
+	int		len;
+	int		index;
 
-	temp_a = stack_a->top;
-	temp_b = stack_b->top;
-	printf("a -> ");
-	while (temp_a != NULL )
+	node = stack->top;
+	len = ft_stack_len(stack);
+	index = 0;
+	while (index <= len / 2)
 	{
-		printf("%d -> ", temp_a->data);
-		temp_a = temp_a->next;
+		node->index = index;
+		index++;
+		node = node->next;
 	}
-	printf("NULL\n");
-	printf("\n");
-	printf("b -> ");
-	while (temp_b != NULL )
+	if (len % 2 == 0)
+		index--;
+	while (index > -1 && node != NULL)
 	{
-		printf("%d -> ", temp_b->data);
-		temp_b = temp_b->next;
+		index--;
+		node->index = index * (-1);
+		node = node->next;
 	}
-	printf("NULL\n");
 }
