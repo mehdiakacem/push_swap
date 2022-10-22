@@ -6,13 +6,11 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 15:37:32 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/21 15:40:50 by makacem          ###   ########.fr       */
+/*   Updated: 2022/10/22 13:02:57 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-
 
 t_node	*ft_smallest_nbr(t_stack *stack_a)
 {

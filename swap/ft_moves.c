@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 15:49:39 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/21 18:13:09 by makacem          ###   ########.fr       */
+/*   Updated: 2022/10/22 13:04:45 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ void	ft_moves(t_stack *stack_b)
 	}
 }
 
-int		ft_calc_moves(t_node *node, t_node *pair)
+int	ft_calc_moves(t_node *node, t_node *pair)
 {
-	int moves;
+	int	moves;
 	int	a;
-	int b;
+	int	b;
 
 	a = pair->index;
 	if (a < 0)
@@ -40,7 +40,7 @@ int		ft_calc_moves(t_node *node, t_node *pair)
 	if (b < 0)
 		b = -b;
 	moves = a + b;
-	return(moves);
+	return (moves);
 }
 
 t_node	*ft_least_moves_node(t_stack *stack_b)

@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 13:02:49 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/21 18:45:01 by makacem          ###   ########.fr       */
+/*   Updated: 2022/10/22 13:07:35 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	main(int argc, char **argv)
 		ft_swap(&stack_a, &stack_b);
 		ft_sort(&stack_a);
 	}
-	//ft_print_stacks(&stack_a, &stack_b);
 	ft_free_stacks(&stack_a);
 	return (0);
 }
