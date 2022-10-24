@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 18:40:31 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/22 12:40:50 by makacem          ###   ########.fr       */
+/*   Updated: 2022/10/24 01:56:47 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_sort(t_stack *stack_a)
 	if (ra > 0)
 	{
 		while (ra > 0)
-		{
+		{	
 			ft_ra(stack_a);
 			ra--;
 		}

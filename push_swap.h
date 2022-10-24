@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 13:02:46 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/21 18:41:14 by makacem          ###   ########.fr       */
+/*   Updated: 2022/10/24 02:04:57 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ void	ft_moves(t_stack *stack_b);
 t_node	*ft_smallest_nbr(t_stack *stack_a);
 t_node	*ft_least_moves_node(t_stack *stack_b);
 void	ft_sort(t_stack *stack_a);
+int		ft_checksort(t_stack *stack_a);
 
 #endif
