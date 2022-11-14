@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 13:02:46 by makacem           #+#    #+#             */
-/*   Updated: 2022/10/24 02:04:57 by makacem          ###   ########.fr       */
+/*   Updated: 2022/11/14 17:04:07 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	ft_dup(int argc, char **argv);
 void	ft_push_stacks(t_node **top, int nbr);
 void	ft_build_stacks(int argc, char **argv, t_stack *a, t_stack *b);
 void	ft_free_stacks(t_stack *stack_a);
+void	ft_free_argv(char **argv);
 void	ft_print_stacks(t_stack *stack_a, t_stack *stack_b);
 void	ft_pa(t_stack *stack_a, t_stack *stack_b);
 void	ft_pb(t_stack *stack_a, t_stack *stack_b);
@@ -72,5 +73,7 @@ t_node	*ft_smallest_nbr(t_stack *stack_a);
 t_node	*ft_least_moves_node(t_stack *stack_b);
 void	ft_sort(t_stack *stack_a);
 int		ft_checksort(t_stack *stack_a);
+char	**ft_split_arg(char **argv);
+int		ft_count_argc(int argc, char **argv);
 
 #endif
